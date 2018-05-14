@@ -116,6 +116,8 @@ the command looks like this but can contain errors
   flashrom -p linux_spi:/dev/spidev0.0 spispeed=1000 -w /path/to/the/thing -V
 ```
 
+[extra notes](../howto/spi.md)
+
 # Community network
 
 Research on the essential tools very important for a community network
