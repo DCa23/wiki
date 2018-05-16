@@ -201,7 +201,7 @@ Complexity: lot of work for a good developer
 
 Wifi vs TDMA => TDMA wins
 
-It is needed a solution that competes with privative TDMA solutions like (ubiquiti) and (mikrotik) technologies
+It is needed a solution that competes with privative TDMA solutions like airmax (ubiquiti) and nv2 (mikrotik) technologies
 
 Meanwhile document how to jam frequency (oh sorry no, a secret link protocol that takes all spectrum) during hard negotiations 
 
