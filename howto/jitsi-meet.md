@@ -22,6 +22,22 @@ First of all I recommend that before starting this guide you have a public IP di
 
 https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md
 
+# Disable jicofo health check
+
+/etc/jitsi/jicofo/sip-communicator.properties
+
+    org.jitsi.jicofo.HEALTH_CHECK_INTERVAL=-1
+
+and restart jicofo
+
+    service jicofo restart
+
+## Why
+
+Read if you are interested on knowing why this option is recommended
+
+[As said by a jitsi developer](https://github.com/jitsi/jitsi-meet/issues/2172#issuecomment-389589242) health checks are for environments with multiple jvbs instances; in other words, there is no sense to have the health check for a single jvb instance. [The problem](https://github.com/jitsi/jitsi-meet/issues/2172) (at least with a single jvb instance) is that the healthcheck opens supposedly too much UDP ports that are not immediately closed after the healtcheck, hence, jicofo crashes and "jitsi is not working"
+
 # Disable third party stuff
 
 Third party stuff example: the random funny avatars
