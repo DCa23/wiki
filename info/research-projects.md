@@ -52,7 +52,7 @@ Origin: Elektra
 
 # Secure mesh
 
-note: I don't need if DFS stuff from secure mesh should be separated, probably later when we have more details. The thing is that they go together because they need wpasupplicant
+note: I don't know if DFS stuff from secure mesh should be separated, probably later when we have more details. The thing is that they go together because they need wpasupplicant
 
 Complexity: feasible for an integrator, good developer skills are very welcome (probably requires to read source code during the documentation phase)
 
