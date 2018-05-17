@@ -3,6 +3,8 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Quick install instructions](#quick-install-instructions)
+- [Disable jicofo health check](#disable-jicofo-health-check)
+  - [Why](#why)
 - [Disable third party stuff](#disable-third-party-stuff)
 - [Enable Screen Capture for Firefox](#enable-screen-capture-for-firefox)
 - [Enable Screen Capture for Chromium/Chrome](#enable-screen-capture-for-chromiumchrome)
@@ -10,6 +12,7 @@
   - [Optional additional step: facilitate DIY](#optional-additional-step-facilitate-diy)
   - [Optional additional step: going official](#optional-additional-step-going-official)
 - [Troubleshooting](#troubleshooting)
+  - [Chromium/Chrome: Screen sharing extension failed to install](#chromiumchrome-screen-sharing-extension-failed-to-install)
 - [More info](#more-info)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
