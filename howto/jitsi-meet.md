@@ -1,6 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
 - [Quick install instructions](#quick-install-instructions)
 - [Disable jicofo health check](#disable-jicofo-health-check)
@@ -155,7 +155,7 @@ try restarting services (or reboot):
 
 ## Chromium/Chrome: Screen sharing extension failed to install
 
-In the console log (F12) says: [modules/RTC/ScreenObtainer.js] <Object.handleExtensionInstallationError>:  Failed to install the extension from https://chrome.google.com/webstore/detail/pghfcfjjnafginnjcndefbljohonelcp Inline installs can only be initiated for Chrome Web Store items that have one or more verified sites.
+In the console log (F12) says: [modules/RTC/ScreenObtainer.js] <Object.handleExtensionInstallationError>:  Failed to install the extension from https://chrome.google.com/webstore/detail/xxxx (xxxx = your extension) Inline installs can only be initiated for Chrome Web Store items that have one or more verified sites.
 
 Verify the site
 
