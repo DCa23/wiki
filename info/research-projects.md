@@ -203,7 +203,9 @@ Wifi vs TDMA => TDMA wins
 
 It is needed a solution that competes with privative TDMA solutions like airmax (ubiquiti) and nv2 (mikrotik) technologies
 
-Meanwhile document how to jam frequency (oh sorry no, a secret link protocol that takes all spectrum) during hard negotiations 
+Meanwhile document how to jam frequency in ath9k wifi driver (oh sorry no, a secret link protocol that takes all spectrum) during hard negotiations 
+
+Another workaround is to use privativa TDMA solutions as bridge devices so the impact of propietary firmwares and protocols are minimized
 
 # Open source implementation of 802.1aq
 
