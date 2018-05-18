@@ -34,6 +34,12 @@ Complexity: feasible for a developer
 
 A (simple?) decentralized DNS solutions that fits in embedded devices (lightweight) to have FQDN services with letsencrypt certificates inside the community network. Interesting additional features: revision control/snapshots and trusting framework to improve control of the registers and avoid attacks.
 
+Candidates:
+
+- https://github.com/mwarning/KadNode
+- https://github.com/torrentkino/torrentkino
+- https://github.com/HarryR/ffff-dnsp2p
+
 # Solar node
 
 Complexity: feasible for an integrator
