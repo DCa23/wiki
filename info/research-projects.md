@@ -23,8 +23,8 @@ important notes:
   - [(2 and 3) Template-based firmware](#2-and-3-template-based-firmware)
 - [Online judge programming challenge resource](#online-judge-programming-challenge-resource)
 - [Improve identity management in community networks](#improve-identity-management-in-community-networks)
-- [Open source TDMA](#open-source-tdma)
-- [Open source implementation of 802.1aq](#open-source-implementation-of-8021aq)
+- [Open source implementation of TDMA for Linux kernel](#open-source-implementation-of-tdma-for-linux-kernel)
+- [Open source implementation of 802.1aq for Linux kernel](#open-source-implementation-of-8021aq-for-linux-kernel)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -195,21 +195,33 @@ I have never tried SAML software, but I found 4 open source implementation (all 
 - https://www.keycloak.org/
 - https://www.gluu.org/
 
-# Open source TDMA
+# Open source implementation of TDMA for Linux kernel
 
-Complexity: lot of work for a good developer
+Complexity: unknown
 
-Wifi vs TDMA => TDMA wins
+http://www.netshe.ru/tdma
 
-It is needed a solution that competes with privative TDMA solutions like airmax (ubiquiti) and nv2 (mikrotik) technologies
+Test [netshe products](http://www.netshe.ru/products) (accessed 2018-05-18)
 
-Meanwhile document how to jam frequency in ath9k wifi driver (oh sorry no, a secret link protocol that takes all spectrum) during hard negotiations 
+```
+NETSHe
 
-Another workaround is to use privative TDMA solutions as bridge devices so the impact of propietary firmwares and protocols is minimized
+    The OpenWRT derivative with compatible SDK and a set of unique software packages (like WebUI, initialization subsystem, wireless extensions) to create firmwares for wireless, networks and embedded devices. 
 
-# Open source implementation of 802.1aq
+Modified wireless stack
 
-Complexity: lot of work for a good developer
+    Modified wireless stack for Linux. Includes TDMA, Frequency, shifting and compression extensions. 
+
+TDMA
+
+    Implementation of time division multiply access for ordinary 802.11a/b/g/n hardware and Linux mac80211 wireless stack 
+```
+
+more info about [channel access](channel-access.md)
+
+# Open source implementation of 802.1aq for Linux kernel
+
+Complexity: unknown
 
 https://en.wikipedia.org/wiki/IEEE_802.1aq
 
