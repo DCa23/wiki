@@ -40,7 +40,7 @@ change variable `PKG_REV` as desired. this is how it looks the file https://gith
 
 notes:
 
-- qmp 3.2.1: `revision=2a87b770d3f9c254e3927dc159e2f425f2e0e83a`
+- qmp 3.2.1: `revision=2a87b770d3f9c254e3927dc159e2f425f2e0e83a` => commit cfefe9fccae2332d147fd9bae7c72d15a42d1982 of https://git.lede-project.org/feed/routing.git
 
 # extra sources
 
