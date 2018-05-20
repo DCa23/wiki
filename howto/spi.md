@@ -5,7 +5,7 @@ During Battlemesh I learned how to unbrick a TP-Link router using a Raspberry Pi
 ## Prerequisites
 
 - Raspberry Pi.
-- An EEPROM programmer clip [1](https://www.amazon.es/SOIC8-SOP8-prueba-EEPROM-Circuit-programaci%C3%B3n-adaptador/dp/B012VSGQ0Q) [2](https://es.aliexpress.com/item/High-quality-SOIC8-SOP8-Test-Clip-For-EEPROM-93CXX-25CXX-24CXX-in-circuit-programming-on-USB/32814392856.html?shortkey=rIVFf6fe&addresstype=600)
+- An EEPROM programmer clip. References: [1](https://www.amazon.es/SOIC8-SOP8-prueba-EEPROM-Circuit-programaci%C3%B3n-adaptador/dp/B012VSGQ0Q), [2](https://es.aliexpress.com/item/High-quality-SOIC8-SOP8-Test-Clip-For-EEPROM-93CXX-25CXX-24CXX-in-circuit-programming-on-USB/32814392856.html?shortkey=rIVFf6fe&addresstype=600)
 - Some jumper cable.
 - The specific datasheet of your EEPROM.
 - Common sense.
@@ -62,7 +62,7 @@ Second: for identification, I usually start with the markings on the IC; a quick
 If you're lucky,  it will take you right to the device in question or at least to the manufacturer.
 Some manufacturers keep a list or searchable database of top markings for their devices online.
 
-There are a number of standards involved with EEPROM and Flash modules; most are governed by [JEDEC](https://github.com/guifi-exo/wiki/blob/master/howto/spi.md) [1] or [OpenNAND](https://github.com/guifi-exo/wiki/blob/master/howto/spi.md)
+There are a number of standards involved with EEPROM and Flash modules; most are governed by [JEDEC](https://github.com/guifi-exo/wiki/blob/master/howto/spi.md) or [OpenNAND](https://github.com/guifi-exo/wiki/blob/master/howto/spi.md)
 
 EEPROMs are very stupid devices and usually don't offer a lot of information.
 
