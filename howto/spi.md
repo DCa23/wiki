@@ -62,7 +62,7 @@ Second: for identification, I usually start with the markings on the IC; a quick
 If you're lucky,  it will take you right to the device in question or at least to the manufacturer.
 Some manufacturers keep a list or searchable database of top markings for their devices online.
 
-There are a number of standards involved with EEPROM and Flash modules; most are governed by JEDEC [1] or OpenNAND [2]
+There are a number of standards involved with EEPROM and Flash modules; most are governed by [JEDEC](https://github.com/guifi-exo/wiki/blob/master/howto/spi.md) [1] or [OpenNAND](https://github.com/guifi-exo/wiki/blob/master/howto/spi.md)
 
 EEPROMs are very stupid devices and usually don't offer a lot of information.
 
@@ -76,5 +76,4 @@ https://en.wikipedia.org/wiki/Common_Flash_Memory_Interface also has some links 
 
 If you really want to go down the rabbit hole, try https://www.jedec.org/category/technology-focus-area/memory-configurations-jesd21-c , which is the main entry to _all_ memory devices :)
 
-[1] http://www.jedec.org
-[2] http://www.onfi.org/
+
