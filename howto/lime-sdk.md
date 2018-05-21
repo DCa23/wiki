@@ -34,13 +34,17 @@ apply patch, for example:
 
     snippets/regdbtz.sh
 
-ibuild architecture and force all compilations locally or it will not apply
+build architecture and force all compilations locally or it will not apply
 
     ./cooker -b ar71xx/generic --force-local
 
 build specific device, for example:
 
     ./cooker -c ar71xx/generic --profile=ubnt-nano-m-xw --flavor=lime_default --community=qmp/v1
+
+## interesting outputs: image builder and sdk
+
+is in the `tmp` directory
 
 ## extra: qMp compatibility - known problems
 
