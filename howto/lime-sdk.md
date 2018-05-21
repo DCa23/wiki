@@ -34,7 +34,7 @@ apply patch, for example:
 
     snippets/regdbtz.sh
 
-build architecture and force all compilations locally or it will not apply. next command gives interesting outputs: image builder and sdk in the `tmp` directory
+build architecture and force all compilations locally or it will not apply. it gives interesting outputs: image builder and sdk in the `tmp` directory
 
     ./cooker -b ar71xx/generic --force-local
 
