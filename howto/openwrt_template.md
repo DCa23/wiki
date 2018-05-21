@@ -4,13 +4,13 @@ status: work in progress
 
 # normal node
 
-nota: utilitzar trunk per tenir nova versió de bmx6 (amb la vella funciona)
+nota: utilitzar trunk per tenir nova versió de bmx6 (amb la vella funciona). potser és recomanable tenir tots els paquets bmx6 junts de cara a diferents processos de compilació que hi pot haver
 
-    bmx6-json bmx6-sms bmx6-uci-config bmx6-table luci luci-ssl
+    bmx6-json bmx6-sms bmx6-uci-config bmx6-table luci luci-ssl luci-app-bmx6 ip-full iwinfo
 
 opcional
 
-    luci-app-bmx6 tcpdump-mini
+    tcpdump-mini
 
 in flavors.conf (lime-sdk)
 
