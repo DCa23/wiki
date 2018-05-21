@@ -175,6 +175,8 @@ Inspiration: Yanosz
 
 Origin: guifilab / barcelona community
 
+We started this => https://github.com/guifi-exo/temba
+
 # Online judge programming challenge resource
 
 Educational and brain-fitness project to improve programming and developer skills for community network folks
