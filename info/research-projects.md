@@ -97,6 +97,8 @@ Complexity: feasible for a developer but requires creative alternative way to so
 
 Wireguard is not prepared yet for community networks. It uses a global clock and requires routers to synchronize NTP before they connect (chicken-egg problem)
 
+Meanwhile, to mitigate the issue somehow, you can have an internal ntp server
+
 # Application to promote socialization between community network members
 
 Complexity: feasible for a developer
