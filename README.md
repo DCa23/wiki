@@ -11,3 +11,12 @@ what can you find here?
 - [presentations](./presentations): some of the recent presentations, we should move it to another place
 
 [LICENSE](./LICENSE) refers to default license (if not specified)
+
+# Invisible credits
+
+Sometimes the commits are not done by the original authors
+
+- Josep Mercader
+- Ramon Selga
+- Thijs
+- Matteo
