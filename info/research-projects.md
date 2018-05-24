@@ -87,7 +87,7 @@ Origin: netcommons.eu / http://peerstreamer.org/
 
 Complexity: feasible for an integrator, probably requires documentation and workshops 
 
-Discard nextcloud to upload massive content and other similar services. This puts risks on system administrators: it is better an encrypted P2P file sharing system
+Discard nextcloud to upload massive content and other similar services. This puts risks on system administrators: it is better an encrypted P2P file sharing system. I see this as a deep and important step to avoid [self-censorship](https://en.wikipedia.org/wiki/Self-censorship) on our communities when we are on "sharing mode"
 
 Origin: Gioacchino Mazzurco / http://retroshare.net/
 
