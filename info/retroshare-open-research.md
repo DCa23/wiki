@@ -24,6 +24,10 @@ If you want to install on your computer: `sudo apt-get install retroshare`
 
 If you want to install on your server: `sudo apt-get install retroshare-nogui`
 
+# Network tab - how you connect
+
+Right click on columns *show columns* and select IP to see what IP are you using to contact your trusted nodes
+
 # Permissions to trusted nodes
 
 Question: When you add a friend, this friend can see your social graph by default. Is there a way to limit this feature?
@@ -39,5 +43,7 @@ Answer:
 - People tab: right click *chat with this person as*
 - Chats tab: right click and *enter this room as*
 - Mail tab: ?
-- Files: you can share files with your trusted nodes
-- Channels: you can specify identity when you submit a comment
+- Files tab: you can share files with your trusted nodes
+- Channels tab: you can specify identity when you submit a comment
+- Forums tab: TODO
+- Links tab: TODO
