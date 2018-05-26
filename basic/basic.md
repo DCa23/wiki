@@ -14,7 +14,7 @@ Actualment és un arbre de 5 branques:
 
 # Por qué guifi está tan extendido en los pueblos?
 
-Porque los operadores de telecomunicacions son esencialmente grandes multinacionales y no invierten en zonas rurales
+Porque los operadores de telecomunicacions son esencialmente grandes multinacionales y solo invierten donde pueden obtener grandes beneficios económicos, esto no incluye a las zonas rurales
 
 artículos que reflejan la situación:
 
