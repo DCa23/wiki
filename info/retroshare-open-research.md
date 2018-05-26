@@ -42,7 +42,7 @@ Answer:
 
 - People tab: right click *chat with this person as*
 - Chats tab: right click and *enter this room as*
-- Mail tab: ?
+- Mail tab: bug, not shown when creating new email. but shown when reply to email
 - Files tab: you can share files with your trusted nodes
 - Channels tab: you can specify identity when you submit a comment
 - Forums tab: TODO
