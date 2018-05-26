@@ -51,7 +51,7 @@ Global Pool statistics:
 
 simulate a radar, as a way to test the wifi channel change
 
-    echo 1 > defs_simulate_radar
+    echo 1 > dfs_simulate_radar
 
 ## adjusting to customm bandwith
 
