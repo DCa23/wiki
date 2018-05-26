@@ -20,3 +20,4 @@ Sometimes the commits are not done by the original authors
 - Ramon Selga
 - Thijs
 - Matteo
+- Ivan Vilata
