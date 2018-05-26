@@ -40,7 +40,7 @@ build architecture and force all compilations locally or it will not apply. it g
 
 build specific device, for example:
 
-    ./cooker -c ar71xx/generic --profile=ubnt-nano-m-xw --flavor=lime_default --community=qmp/v1
+    ./cooker -c ar71xx/generic --profile=ubnt-nano-m-xw --flavor=lime_default --community=qmp/v1 --force-local
 
 ## extra: qMp compatibility - known problems
 
@@ -81,6 +81,9 @@ inside lime-sdk repo, navigate to `feeds/base`, there you can manage the classic
 
 - Q: How to included config files in the firmware image?
     - A: place them in files directory, from there place the path, for example: files/etc/config/system.conf
+
+- Q: Where is the image builder and sdk that lime-sdk is using?
+    - A: with this command you will find it easily: `find | grep rules.mk` there is a directory called `ib` and another `sdk`
 
 # extra references
 
