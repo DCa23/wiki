@@ -1,3 +1,5 @@
+# Tour
+
 This is a multilanguage repository, you can find mixed information in catalan, english and spanish
 
 what can you find here?
@@ -10,8 +12,6 @@ what can you find here?
 
 - [presentations](./presentations): some of the recent presentations, we should move it to another place
 
-[LICENSE](./LICENSE) refers to default license (if not specified)
-
 # Invisible credits
 
 Sometimes the commits are not done by the original authors
@@ -21,3 +21,7 @@ Sometimes the commits are not done by the original authors
 - Thijs
 - Matteo
 - Ivan Vilata
+
+# License
+
+[LICENSE](./LICENSE) refers to default license (if not specified)
