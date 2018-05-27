@@ -21,6 +21,7 @@ Sometimes the commits are not done by the original authors
 - Thijs
 - Matteo
 - Ivan Vilata
+- Al
 
 # License
 
