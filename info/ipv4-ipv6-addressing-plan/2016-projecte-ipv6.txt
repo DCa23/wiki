@@ -1,0 +1,307 @@
+extracció de http://etherpad.guifi.net/p/2016-projecte-ipv6
+
+Projecte prova pilot implementar ipv6 a nodes de BCN o Barcelonès
+http://exo.cat/activitats/projectes/
+
+Canal de tertúlia: https://xat.guifi.net/channel/proves-ipv6
+Projecte: http://project.guifi.net/projects/lab-ipv6
+
+-Disposem de documentació al HUB.exo.cat, apartat de Documents, adreça "/platform/users"
+
+Persones involucrades:
+    -Josep Moles
+    -Eloi Rebés
+    -Ivan Vilata
+    -Conxuro
+    -David Pinilla
+    -?
+
+Escenari:
+- Muntar a proxmox (Hangar) 8 maquines virtuals rOS -> OK
+- Emprar llicència de Mikrotik universitària per a proves -> OK
+- Replicar 9 nodes de la xarxa d’Hospitalet i Barcelona (vegeu diagrama "/platform/users/Projecte IPv6/ipv6 nodes.pdf" al hub)
+  (Caldria afegir alguna frontera Mesh a les proves)
+- Començar amb IPv4, fer que funcione
+- Els enllaços entre nodes els simularem amb VLANS
+- Disposem d'un rang ipv6 /33 publica cedida de la Fundació guifinet per al projecte, perquè al whois diu que li correspon /32 (a la web de l'exo diu /33 per a tot el mon (de Guifi)) ?
+% Information related to '2a00:1508::/32AS49835'
+
+route6:         2a00:1508::/32
+descr:          GUIFINET v6 Network
+origin:         AS49835
+mnt-routes:     GUIFI-NET-MNT
+mnt-by:         GUIFI-NET-MNT
+created:        2010-04-11T02:13:00Z
+last-modified:  2010-04-11T02:13:00Z
+source:         RIPE
+
+- Té la mateixa consideració una zona que una subzona? (P.ex. Barcelones, Barcelona, Sants) amb la mateixa assignació IP ?
+- Les xarxes Mesh no haurien de ser diferents d'una amb infraestructura. S'ha de considerar que una Mesh no es una subzona d'una zona, sinó que es part d'aquesta zona amb un rang IP afegit  (com si el rang de la zona s'omplís i s'haguès d'afegir un altre).
+
+- No crec que calgui fer servir ULA, com a molt per enllaços P2P, que ho veig més llògic que el link local.
+
+
+Routing clients, opcions:
+    iBGP: no crec que hauria d'haver problemes amb noves cadenes de filtres (ibgp-in/out a més dels actuals ebgp-in/out)
+    OSPFv3: altre IGP, que com es va comentar, no hi hauria d'interferir amb el OSPF d'altres zones.
+    RIPng: té algun avantatge més que la simplicitat? (no sempre és una bona característica).
+    Proves amb estàtic
+
+Assignació IPv6 nodes
+https://docs.google.com/spreadsheets/d/1p3Gh2xPDpAp8K_TKdE-hLXejbVsQ0kKYWmvoLTTVTYo/edit#gid=852146285
+
+
+VLANs dels enllaços:
+    - Telvent - Jis: 1011
+    - Telvent - Pinilla: 1012
+    - Telvent - Balaguer: 1013
+    - Telvent - Hangar: 1014
+    - Telvent - UPC-Lab: 1015
+    - Balaguer - UPC-H: 1021
+    - Hangar - Granvia940: 1031
+    - UPC-Lab - UPC-DSG: 1041
+    - UPC-H - UPC-DSG: 1051
+    - Hangar - Client1: 1061
+    - Hangar - Client2: 1061
+    - Pinilla - Client3: 1071
+
+Assignació d’adreça IPv6 d’enllaç local (per a intercanvis BGP enllaços punt a punt etc.): no confondre un enllaç punt a punt amb un intercanvi BGP (que, tot i que habitualment, no necessàriament ha de ser entre nodes directament enllaçats)
+    - fe80::NÚMERO_DE_NODE (en hexadecimal)
+
+Rangs assignats:
+Barcelona
+Pública       2a00:1508:8000::/45
+ULA1            fdc4:5efb:2319::/48
+
+		* Telvent
+			* IPGestio: 192.168.88.1/24
+			* IPGuifi: 10.38.140.225/27
+			* IPv6           2a00:1508:8000:5000::  /52 
+			* IPv6 ULA    fdc4:5efb:2319:5000:: /52
+			* IPv6 local  fe80::8D16
+			* Node guifi: 27612
+			* VM: 42601
+			* Web: https://guifi.net/ca/node/36118
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-telvent    FET! i en marxa!  IPv6 posades!
+
+		* Hangar
+			* IPGestio: 192.168.88.2/24
+			* IPGuifi: 10.139.94.97/27
+			* IPv6           2a00:1508:8000:0000::        /52 
+			* IPv6 ULA    fdc4:5efb:2319:000:::          /52
+			* IPv6 local  fe80::266E
+			* ASPATH: 15624
+			* VM: 42602
+			* Web: https://guifi.net/node/9838
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-hangar    FET! i en marxa!
+
+
+		* Granvia940
+			* IPGestio: 192.168.88.3/24
+			* IP: 10.139.92.33/27
+			* IPv6           2a00:1508:8000:2000::        /52 
+			* IPv6 ULA    fdc4:5efb:2319:2000::         /52
+			* IPv6 local  fe80::5086
+			* ASPATH: 15066 
+			* VM: 42603
+			* Web: http://guifi.net/bcngranvia940
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-granvia940    FET! i en marxa!
+
+		* UPC-Lab
+			* IPGestio: 192.168.88.4/24
+			* IP: 10.139.40.1/24
+			* IPv6           2a00:1508:8000:3000::        /52
+			* IPv6 ULA    fdc4:5efb:2319:3000::         /52
+			* IPv6 local  fe80::C142
+			* ASPATH: 40605
+			* VM: 42604
+			* Web: http://guifi.net/node/49474
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-upclab  FET! i en marxa!!
+
+		* UPC-H
+			* IPGestio: 192.168.88.5/24
+			* IP: 10.139.89.1/27
+			* IPv6           2a00:1508:8000:4000::        /52
+			* IPv6 ULA    fdc4:5efb:2319:4000::         /52
+			* IPv6 local  fe80::75B4
+			* ASPATH: 26918
+			* VM: 42605
+			* Web: http://guifi.net/node/30132
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-upch  FET! i en marxa!
+
+		* UPC-DSG  (al mapa és C6, caldria canviar-ho)  realment UPC-DSG i UPC-C6 són a la mateixa ubicació, però està així perquè antigament no es podia mesclar Mesh i Infra en una mateixa zona (caldria unificar-los)
+			* IPGestio: 192.168.88.6/24
+			* IP: 10.139.37.225/27
+			* IPv6           2a00:1508:8000:1000::        /52 
+			* IPv6 ULA    fdc4:5efb:2319:1000::         /52
+			* IPv6 local  fe80::6DD9
+			* ASPATH: 22110
+			* VM: 42606
+			* Web: http://guifi.net/node/28121
+					https://guifi.net/UPC-C6
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-updsg  FET! i en marxa!!
+
+
+
+
+L'Hospitalet
+Pública        2a00:1508:8008:: /45 
+ULA             fdfd:c66d:56a3::/48
+
+
+
+		* Jis
+			* IPGestio: 192.168.88.7/24
+			* IPGuifi: 10.35.125.104/27
+			* IPv6           2a00:1508:8008:1000::        /52 
+			* IPv6 ULA   fdfd:c66d:56a3:1000::          /52
+			* IPv6 local  fe80::1805
+			* ASPATH: 4463
+			* VM: 42607
+			* Web: https://guifi.net/node/6149
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-jis   FET! i en marxa!
+
+		* Pinilla
+			* IPGestio: 192.168.88.8/24
+			* IPGuifi: 10.38.142.33/27
+			* IPv6           2a00:1508:8008:3000::        /52 
+			* IPv6 ULA   fdfd:c66d:56a3:3000 /52
+			* IPv6 local  fe80::AA6F
+			* ASPATH: 35578
+			* VM: 42608
+			* Web: https://guifi.net/node/43631
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-pinilla    FET! i en marxa! IPv6 posades!
+
+		* Balaguer
+			* IPGestio: 192.168.88.9/24
+			* IPGuifi: 10.38.141.161/27
+			* IPv6           2a00:1508:8008:1000::        /52 
+			* IPv6 ULA   fdfd:c66d:56a3:1000:    /52
+			* IPv6 local  fe80::9E5A
+			* ASPATH: 32312
+			* VM: 42609
+			* Web: https://guifi.net/node/40538
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-balaguer   FET! i en marxa!
+
+
+Clienets de supernodes:
+    
+    
+		* Hangar-Client1
+			* IPGestio: 192.168.88.10/24
+			* IPGuifi: 10.139.94.98/27
+			* IPv6           2a00:1508:8000:0004::        /62   ????
+			* IPv6 ULA    fdc4:5efb:2319:0004::         /62   ????
+			* IPv6 local  fe80::266E   ????
+			* VM: 42610
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-hangar-cl1 FET! i en marxa!
+
+		* Hangar-Client2
+			* IPGestio: 192.168.88.11/24
+			* IPGuifi: 10.139.94.99/27
+			* IPv6           2a00:1508:8000:0008::        /62   ????
+			* IPv6 ULA    fdc4:5efb:2319:0008::          /62   ????
+			* IPv6 local  fe80::266E   ????
+			* VM: 42611
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-hangar-cl2 FET! i en marxa!
+			* Dude! Monitoritza la xarxa
+
+		* Pinilla-Client3
+			* IPGestio: 192.168.88.12/24
+			* IPGuifi: 10.38.142.34/27
+			* IPv6           2a00:1508:8008:3004::        /62   ????
+			* IPv6 ULA   fdfd:c66d:56a3:3004            /62    ????
+			* IPv6 local  fe80::AA6F    ????
+			* VM: 42612
+			* Unsolclick: http://etherpad.guifi.net/p/2016-projecte-ipv6-unsolclick-pinilla-cl3 FET! i en marxa!
+
+
+2a00:1508:8000:0000::/52        Hangar
+fdc4:5efb:2319:000::/52
+	 SN (supernode)
+		2a00:1508:8000:0000::/62
+		fdc4:5efb:2319:0000::/62
+			Perd la primera xarxa ULA que la farà servir la primera interface del AP1 fdc4:5efb:2319:0000::/64 
+			16 interfícies a APs
+				1a    fdc4:5efb:2319:0000::nodeHangar/64
+				2a    fdc4:5efb:2319:0100:nodeHangar:/64
+				..
+				16a  fdc4:5efb:2319:0F00:nodeHangar:/64
+	
+	AP1 de 16
+			CPE1 de 63
+				fdc4:5efb:2319:0000::nodeAP1CPE1/64
+				2a00:1508:8000:0004::/62
+				fdc4:5efb:2319:0004::/62
+			CPE2 de 63
+				fdc4:5efb:2319:0000::nodeAP1CPE2/64
+				2a00:1508:8000:0008::/62
+				fdc4:5efb:2319:0008::/62
+				
+	AP2 de 16
+		fdc4:5efb:2319:0100::/56
+			CPE1 de 64
+				fdc4:5efb:2319:0100::nodeAP2CPE1/64
+				2a00:1508:8000:0100::/62
+				fdc4:5efb:2319:0100::/62
+			CPE2 de 64
+				fdc4:5efb:2319:0100::nodeAP2CPE2/64
+				2a00:1508:8000:0104::/62
+				fdc4:5efb:2319:0104::/62
+				
+		
+		
+2a00:1508:8000:1000::        /52        Granvia940
+2a00:1508:8000:2000::        /52        UPC-H
+2a00:1508:8000:3000::        /52        UPC-Lab
+2a00:1508:8000:4000::        /52        UPC-DSG
+
+
+2a00:1508:8008:1000::        /52        Balaguer
+2a00:1508:8008:2000::        /52        Jis
+2a00:1508:8008:3000::        /52        Pinilla-Hw-ErmitaBellvitge
+
+
+
+
+
+
+Sala de  conferencia:
+    https://meet.jit.si/GuifiProjecteIPv6
+
+Per a infraestructura:
+
+    Prefixe /48 :: Prefixe ULA de la zona, fins a 16 supernodes (4 bits)
+    Prefixe /52 :: Supernode fins a 16 APs (4 bits)
+    Prefixe /56 :: Interfícies/AP fins a 64 CPE (6 bits)
+    Prefixe /62 :: CPE, fins a 4 xarxes LAN /64 (2 bits)
+    Prefixe /64 :: Xarxa LAN interna de client 
+
+Per a mesh:
+
+  (el que ja hi ha)
+  
+  
+http://es.slideshare.net/Prozcenter/seminario-de-ipv6-con-mikrotik-routeros
+
+
+Videoteca, 4 sessions diferents d' ipv6:
+	* presentacio a Hangar sobre resum curs cap al 2009. (1video) link: 
+		* http://videos.guifi.net/guifimedia/2009-12-01%20Curs%20LIR%20a%20Hangar/
+	* curs del LIR, amb exercicis, en angles. (4videos) links:
+		* http://videos.guifi.net/guifimedia/2010-09-15%201d4%20guifi%20a%20LIR%20training/  
+		* http://videos.guifi.net/guifimedia/2010-09-15%202d4%20guifi%20a%20LIR%20training/  
+		* http://videos.guifi.net/guifimedia/2010-09-15%203d4%20guifi%20a%20LIR%20training/  
+		* http://videos.guifi.net/guifimedia/2010-09-15%204d4%20guifi%20a%20LIR%20training/
+	* presentació ipv6 Jordi Palet. (3 videos) links:
+		* http://videos.guifi.net/guifimedia/2011-04-14%20ipv6%201d3/  
+		* http://videos.guifi.net/guifimedia/2011-04-14%20ipv6%202d3/  
+		* http://videos.guifi.net/guifimedia/2011-04-14%20ipv6%203d3/
+	* ...hi ha un mes del sax2011  Sebastian Galeano. (1 video) link: 
+		* http://videos.guifi.net/guifimedia/2011-04-12%2012sax2011wbm4/
+
+
+
+
+
+
