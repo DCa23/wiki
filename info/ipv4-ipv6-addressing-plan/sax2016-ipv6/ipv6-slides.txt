@@ -1,0 +1,43 @@
+% Provant IPv6 a guifi.net Barcelonès
+% J. Florit, J. Molés, E. Rebés, I. Vilata i guifilab Barcelonès
+% SAX 2016, Barcelona
+
+# Context
+
+  - Experiment de desplegament d’IPv6 a prop de Telvent
+      - Avançar‐se a les necessitats de connectivitat futures
+      - Impacte en encaminament, configuració i seguretat
+      - Simplificar l’agregació de les adreces
+  - Xarxa pública ``2a00:1508:8000::/33`` de la Fundació
+  - Xarxes privades de control/backup (ULA)
+  - Connexió a Internet proporcionada per la eXO
+
+# Adreçament
+
+![Repartiment del rang IPv6](ipv6-rangs.png)
+
+# Adreces i desplegament
+
+![Exemple de desplegament IPv6](guifi-ipv6.png)
+
+# Simulació de desplegament
+
+![Xarxa de nodes virtuals](ipv6-dude.png)
+
+# Assumptes pendents
+
+  - Adreçament:
+      - Assignació d’adreces a nodes concrets (ID de node?)
+      - Limitacions del programari (enllaç local a Mikrotik)
+      - Suficient per a xarxes mesh?
+      - Mecanismes de transició IPv4/IPv6 (NAT64, DNS64…)
+  - Desplegament en nodes reals
+  - Incorporació a l’aplicació web de guifi.net (unsolclic etc.)
+  - Adreçament públic, encaminament cap a Internet?
+  - Participeu‐hi!  
+    ``#proves-ipv6 @ xat.guifi.net``
+
+<!--- http://exo.cat/activitats/projectes/ --->
+<!--- http://etherpad.guifi.net/p/2016-projecte-ipv6 --->
+<!--- https://xat.guifi.net/channel/proves-ipv6 --->
+<!--- https://hub.exo.cat/ -> Documents -> platform -> users -> Projecte IPv6 --->
